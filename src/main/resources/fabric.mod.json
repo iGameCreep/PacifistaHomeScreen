@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "pacifistahomescreen",
+  "version": "${version}",
+  "name": "PacifistaHomeScreen",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/PC/PacifistaHomeScreen"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/pacifistahomescreen/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "fr.pacifista.pacifistahomescreen.PacifistaHomeScreen"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  },
+  "mixins": [
+    "pacifistahomescreen.mixins.json"
+  ]
+}
