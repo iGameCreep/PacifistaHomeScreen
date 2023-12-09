@@ -24,10 +24,12 @@ import net.minecraft.client.realms.gui.screen.RealmsMainScreen;
 import net.minecraft.text.Text;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 
 @Environment(EnvType.CLIENT)
 @Mixin(TitleScreen.class)
 public abstract class PacifistaMixin extends Screen {
+    @Unique
     private static final Text COPYRIGHT = Text.translatable("title.credits");
 
     protected PacifistaMixin() {
@@ -55,6 +57,7 @@ public abstract class PacifistaMixin extends Screen {
         this.addDefaultButtons();
     }
 
+    @Unique
     private void addDefaultButtons() {
         assert this.client != null;
         int i = this.textRenderer.getWidth(COPYRIGHT);
@@ -86,6 +89,7 @@ public abstract class PacifistaMixin extends Screen {
         this.initWidgetsNormal(l);
     }
 
+    @Unique
     private void initWidgetsNormal(int y) {
         assert this.client != null;
         int spacingY = 24;
@@ -104,6 +108,7 @@ public abstract class PacifistaMixin extends Screen {
         ).dimensions(this.width / 2 - 100, y + spacingY * 2, 200, 20).tooltip(tooltip).build()).active = bl;
     }
 
+    @Unique
     @Nullable
     private Text getMultiplayerDisabledText() {
         assert this.client != null;
